@@ -1,10 +1,10 @@
-
+console.log("Javascript running...")
 var sub_btn = document.querySelectorAll(".btn")
 var sub_btn_name = [];
 for (i=0;i<sub_btn.length;i++){
   sub_btn_name.push(sub_btn[i].innerText)
 }
-
+console.log(sub_btn_name)
 
 function getTime(){
   d = new Date()
@@ -29,7 +29,7 @@ function getTime(){
   return time_list
 }
 
-
+console.log(getTime())
 
 setInterval(() => {
   currentDate = new Date().toLocaleString();
@@ -53,7 +53,13 @@ setInterval(() => {
       }
     }
   }
-  countdown = +exam_day[1]-(+date[1])
+  countdown = +exam_day[1]-(date[1])
+  console.log(countdown)
+  if (countdown > 0){
+    document.getElementById("countdown").innerText = `${+exam_day[1]-date[1]} days till exam!`
+  }else{
+    document.getElementById("countdown").innerText = "Death time has arrived"
+  }
   
   
 
